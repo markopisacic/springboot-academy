@@ -1,6 +1,7 @@
 package com.ag04smarts.sha;
 
 import com.ag04smarts.sha.bootstrap.BootStrapData;
+import com.ag04smarts.sha.controllers.GreetingController;
 import com.ag04smarts.sha.domain.Patient;
 import com.ag04smarts.sha.repositories.PatientRepository;
 import org.springframework.boot.SpringApplication;
@@ -30,6 +31,9 @@ public class SHAApplication {
 
         System.out.println(patientRepository.findAll().toString());
 
+        GreetingController greetingController = (GreetingController) ctx.getBean("greetingController");
+
+        greetingController.greet();
 
         System.out.println("Done");
     }
